@@ -1,0 +1,126 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "_price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "_amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "_from",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "_currency",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct ITokenProxy.ListRequest",
+						"name": "request",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "buy",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "_price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "_amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "_currency",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "duration",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ITokenProxy.MakeOfferRequest",
+						"name": "request",
+						"type": "tuple"
+					}
+				],
+				"name": "makeOffer",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ITokenProxy.sol": "ITokenProxy"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ITokenProxy.sol": {
+			"keccak256": "0xa803f0eadfbca38ed8a4a46492376efc9c1883a79d5dfd463dd9b573d606a870",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7740340d034143f57511600124379105e31cf983cf2588469b23d329817e6057",
+				"dweb:/ipfs/QmdRcTyij8WpSwX3hFCpMKnRG4ZjHcCKfJm3TiXRi6jnzL"
+			]
+		}
+	},
+	"version": 1
+}
