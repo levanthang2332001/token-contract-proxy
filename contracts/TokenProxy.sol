@@ -6,7 +6,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
-contract TokenProxy is Initializable, ERC20Upgradeable, OwnableUpgradeable, UUPSUpgradeable {
+contract TokenProxy is Initializable, OwnableUpgradeable, UUPSUpgradeable, ERC20Upgradeable {
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();

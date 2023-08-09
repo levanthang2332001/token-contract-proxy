@@ -30,12 +30,17 @@
 								"type": "address"
 							},
 							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							},
+							{
 								"internalType": "bytes",
 								"name": "signature",
 								"type": "bytes"
 							}
 						],
-						"internalType": "struct ITokenProxy.ListRequest",
+						"internalType": "struct ITokenMarket.ListRequest",
 						"name": "request",
 						"type": "tuple"
 					},
@@ -75,7 +80,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct ITokenProxy.MakeOfferRequest",
+						"internalType": "struct ITokenMarket.MakeOfferRequest",
 						"name": "request",
 						"type": "tuple"
 					}
@@ -99,7 +104,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ITokenMarket.sol": "ITokenProxy"
+			"contracts/ITokenMarket.sol": "ITokenMarket"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -114,11 +119,11 @@
 	},
 	"sources": {
 		"contracts/ITokenMarket.sol": {
-			"keccak256": "0xa803f0eadfbca38ed8a4a46492376efc9c1883a79d5dfd463dd9b573d606a870",
+			"keccak256": "0x0ac6dde21ea6cc1a7444b894ecd05efed3453c367586476b8955e2b83c684006",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7740340d034143f57511600124379105e31cf983cf2588469b23d329817e6057",
-				"dweb:/ipfs/QmdRcTyij8WpSwX3hFCpMKnRG4ZjHcCKfJm3TiXRi6jnzL"
+				"bzz-raw://f97bb5f0af302db6cce9a1b6be5da782d0f64ccace4a8bb80f1542928b23c60f",
+				"dweb:/ipfs/QmaUHG3fVswMaFvKMdJa7vfz9h7wGjhX17H8wuk8TMFmVz"
 			]
 		}
 	},
