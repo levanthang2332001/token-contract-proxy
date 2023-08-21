@@ -6,34 +6,9 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_tokenAddress",
-						"type": "address"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "previousOwner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "OwnershipTransferred",
-				"type": "event"
 			},
 			{
 				"inputs": [],
@@ -64,30 +39,78 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
-						"name": "sig",
-						"type": "bytes"
+						"internalType": "address",
+						"name": "_tokenAddress",
+						"type": "address"
 					}
 				],
-				"name": "_splitSignature",
+				"name": "_checkAllowance",
 				"outputs": [
 					{
-						"internalType": "bytes32",
-						"name": "r",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "s",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "uint8",
-						"name": "v",
-						"type": "uint8"
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_getAddressThis",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ERC20",
+						"name": "_tokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "_getBlanceContract",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_getChainId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_getMsgSender",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -95,34 +118,24 @@
 					{
 						"components": [
 							{
+								"internalType": "address",
+								"name": "tokenAddress",
+								"type": "address"
+							},
+							{
 								"internalType": "uint256",
 								"name": "_price",
 								"type": "uint256"
 							},
 							{
 								"internalType": "uint256",
-								"name": "_amount",
+								"name": "_quantity",
 								"type": "uint256"
 							},
 							{
 								"internalType": "address",
 								"name": "_from",
 								"type": "address"
-							},
-							{
-								"internalType": "address",
-								"name": "_currency",
-								"type": "address"
-							},
-							{
-								"internalType": "uint256",
-								"name": "deadline",
-								"type": "uint256"
-							},
-							{
-								"internalType": "bytes",
-								"name": "signature",
-								"type": "bytes"
 							}
 						],
 						"internalType": "struct ITokenMarket.ListRequest",
@@ -149,8 +162,13 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "_amount",
+						"name": "_quantity",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenAddress",
+						"type": "address"
 					}
 				],
 				"name": "listing",
@@ -174,13 +192,18 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "address",
 						"name": "",
-						"type": "uint256"
+						"type": "address"
 					}
 				],
 				"name": "listings",
 				"outputs": [
+					{
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					},
 					{
 						"internalType": "uint256",
 						"name": "_price",
@@ -188,28 +211,13 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "_amount",
+						"name": "_quantity",
 						"type": "uint256"
 					},
 					{
 						"internalType": "address",
 						"name": "_from",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_currency",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "deadline",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bytes",
-						"name": "signature",
-						"type": "bytes"
 					}
 				],
 				"stateMutability": "view",
@@ -226,13 +234,8 @@
 							},
 							{
 								"internalType": "uint256",
-								"name": "_amount",
+								"name": "_quantity",
 								"type": "uint256"
-							},
-							{
-								"internalType": "address",
-								"name": "_currency",
-								"type": "address"
 							},
 							{
 								"internalType": "uint256",
@@ -249,67 +252,11 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "owner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "renounceOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "token",
-				"outputs": [
-					{
-						"internalType": "contract IERC20",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "transferOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {
-				"owner()": {
-					"details": "Returns the address of the current owner."
-				},
-				"renounceOwnership()": {
-					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
-				},
-				"transferOwnership(address)": {
-					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
-				}
-			},
+			"methods": {},
 			"version": 1
 		},
 		"userdoc": {
@@ -342,12 +289,28 @@
 				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
 			]
 		},
+		"@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0xa56ca923f70c1748830700250b19c61b70db9a683516dc5e216694a50445d99c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cac938788bc4be12101e59d45588b4e059579f4e61062e1cda8d6b06c0191b15",
+				"dweb:/ipfs/QmV2JKCyjTVH3rkWNrfdJRhAT7tZ3usAN2XcnD4h53Mvih"
+			]
+		},
 		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
 			"keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
 			"license": "MIT",
 			"urls": [
 				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
 				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd",
+				"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8"
 			]
 		},
 		"@openzeppelin/contracts/utils/Context.sol": {
@@ -359,19 +322,19 @@
 			]
 		},
 		"contracts/ITokenMarket.sol": {
-			"keccak256": "0x0ac6dde21ea6cc1a7444b894ecd05efed3453c367586476b8955e2b83c684006",
+			"keccak256": "0xbbca052d8ab5e3ed8375188f4145e0c70f0e6863220b8245b9d52351c8589177",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f97bb5f0af302db6cce9a1b6be5da782d0f64ccace4a8bb80f1542928b23c60f",
-				"dweb:/ipfs/QmaUHG3fVswMaFvKMdJa7vfz9h7wGjhX17H8wuk8TMFmVz"
+				"bzz-raw://1f7877da431e2005c0acd94b951a4b153a2b26fec26f51afbfb004df7ddcc539",
+				"dweb:/ipfs/Qmdr8wKuPY65keFYtxHqK5w6XWrUwT8FZariWP73yivhzt"
 			]
 		},
 		"contracts/TokenMarket.sol": {
-			"keccak256": "0xcaa45baff897cc8a7f8541b3e015921547930cfa503c53fd93364ec86d905033",
+			"keccak256": "0x1759f8fbd96b8f383f5d30880ddab7b8e416c4ede02d9314f6dfc184b418762b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://eb9c630fe1ac052b226350482268a0414cd558bd0046dfcaa9be0204a800da0f",
-				"dweb:/ipfs/QmVu9o8sQz5g5sUNALjZbVe6WaJ3nfUw1m29qNNLLRNyg2"
+				"bzz-raw://fe34469fced0d09d010a66656b08fe5d21b1646972399a2933a1e317b2c7f7e6",
+				"dweb:/ipfs/QmNUn5ZDNvgow1pGqHYgSeasPPXnPhHPFiEmpTSpGLF4eQ"
 			]
 		}
 	},

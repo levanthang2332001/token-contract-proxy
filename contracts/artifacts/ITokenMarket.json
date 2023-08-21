@@ -49,8 +49,8 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"buy((uint256,uint256,address,address,uint256,bytes),uint256)": "8885d395",
-			"makeOffer((uint256,uint256,address,uint256))": "5d76a9b7"
+			"buy((address,uint256,uint256,address),uint256)": "c3ecfc5a",
+			"makeOffer((uint256,uint256,uint256))": "49977084"
 		}
 	},
 	"abi": [
@@ -59,34 +59,24 @@
 				{
 					"components": [
 						{
+							"internalType": "address",
+							"name": "tokenAddress",
+							"type": "address"
+						},
+						{
 							"internalType": "uint256",
 							"name": "_price",
 							"type": "uint256"
 						},
 						{
 							"internalType": "uint256",
-							"name": "_amount",
+							"name": "_quantity",
 							"type": "uint256"
 						},
 						{
 							"internalType": "address",
 							"name": "_from",
 							"type": "address"
-						},
-						{
-							"internalType": "address",
-							"name": "_currency",
-							"type": "address"
-						},
-						{
-							"internalType": "uint256",
-							"name": "deadline",
-							"type": "uint256"
-						},
-						{
-							"internalType": "bytes",
-							"name": "signature",
-							"type": "bytes"
 						}
 					],
 					"internalType": "struct ITokenMarket.ListRequest",
@@ -115,13 +105,8 @@
 						},
 						{
 							"internalType": "uint256",
-							"name": "_amount",
+							"name": "_quantity",
 							"type": "uint256"
-						},
-						{
-							"internalType": "address",
-							"name": "_currency",
-							"type": "address"
 						},
 						{
 							"internalType": "uint256",
